@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김쌤과 이탈리아어 배우기: 핵심 문법 요약본 (24강 ~ 45강)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chosen Palette: Calm Harmony (bg-gray-50, bg-white, text-gray-800, text-blue-600) -->
+    <!-- Application Structure Plan: 
+      - 구조: 고정된 좌측 사이드바 탐색 메뉴 + 스크롤 가능한 우측 메인 콘텐츠 영역.
+      - 이유: 본 문서는 '학습 요약본'이라는 참조(reference) 문서의 성격이 강합니다. 사용자는 1강부터 순차적으로 읽기보다는, '관계대명사'나 '결합 대명사'처럼 특정 주제를 빠르게 찾아보려는 목적이 큽니다. 따라서 모든 주제(강의)를 한눈에 볼 수 있는 고정 탐색 메뉴를 제공하여, 클릭 한 번으로 원하는 콘텐츠 섹션으로 즉시 이동할 수 있게 하는 것이 가장 효율적인 사용자 경험(UX)을 제공한다고 판단했습니다.
+      - 사용자 흐름: 1. 페이지 로드 -> 2. 좌측 메뉴에서 학습할 강의(예: '제 28강') 클릭 -> 3. 메인 콘텐츠가 해당 섹션('s28')으로 부드럽게 스크롤됨 -> 4. 사용자는 해당 문법 학습.
+    -->
+    <!-- Visualization & Content Choices: 
+      - 본 보고서(문법 요약본)의 콘텐츠는 주로 텍스트 설명, 규칙, 그리고 표(table)로 구성되어 있습니다. 차트로 시각화할 정량적 데이터가 없습니다.
+      - 텍스트/규칙 (모든 섹션) -> Goal: Inform -> Presentation: HTML 텍스트, 목록, Tailwind로 스타일링된 인용구/코드 블록.
+      - 동사 변화표/대명사표 (24, 25, 26, 27, 28, 29, 33강) -> Goal: Organize/Compare -> Presentation: Tailwind로 스타일링된 HTML <table>. -> Interaction: 사용자는 표를 통해 규칙(예: 어미 변화)과 형태(예: 약세형/강세형)를 명확히 비교하며 참조할 수 있습니다.
+      - 핵심 상호작용: JS를 활용한 '탐색 메뉴 클릭 시 부드러운 스크롤' 기능을 구현하여, 긴 문서 내에서 원하는 정보에 빠르고 쉽게 접근할 수 있도록 합니다.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        #sidebar a.active {
+            background-color: #dbeafe;
+            color: #2563eb;
+            font-weight: 500;
+        }
+        section {
+            scroll-margin-top: 80px; 
+        }
+        @media (max-width: 768px) {
+            #sidebar {
+                position: static;
+                width: 100%;
+                height: auto;
+                flex-direction: row;
+                overflow-x: auto;
+                white-space: nowrap;
+                border-bottom: 1px solid #e5e7eb;
+            }
+            #sidebar a {
+                padding: 12px 16px;
+                border-radius: 0;
+            }
+            main {
+                margin-left: 0;
+            }
+            section {
+                scroll-margin-top: 140px; 
+            }
+            .flex-col.md\:flex-row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="flex flex-col md:flex-row">
+        
+        <nav id="sidebar" class="w-full md:w-64 bg-white h-auto md:h-screen md:fixed top-0 left-0 p-4 shadow-md flex flex-col space-y-2 md:overflow-y-auto">
+            <h2 class="text-xl font-bold text-blue-600 mb-4 hidden md:block">학습 메뉴</h2>
+            <a href="#s0" data-target="s0" class="nav-link text-gray-700 hover:bg-gray-100 p-2 rounded-lg transition-colors duration-200">서문</a>
+            <a href="#s24" data-target="s24" class="nav-link text-gray-700 hover:bg-gray-100 p-2 rounded-lg transition-colors duration-200">제 24강: 근과거</a>
+            <a href="#s25" data-target="s25" class="nav-link text-gray-700 hover:bg-gray-100 p-2 rounded-lg transition-colors duration-200">제 25강: 불규칙 p.p.</a>
+            <a href="#s26" data-target="s26" class="nav-link text-gray-700 hover:bg-gray-100 p-2 rounded-lg transition-colors duration-200">제 26강: 직접 목적 대명사</a>
+            <a href="#s27" data-target="s27" class="nav-link text-gray-700 hover:bg-gray-100 p-2 rounded-lg transition-colors duration-200">제 27강: 간접 목적 대명사</a>
+            <a href="#s28" data-target="s28" class="nav-link text-gray-700 hover:bg-gray-100 p-2 rounded-lg transition-colors duration-200">제 28강: 결합 대명사</a>
+            <a href="#s29" data-target="s29" class="nav-link text-gray-700 hover:bg-gray-100 p-2 rounded-lg transition-colors duration-200">제 29-30강: 미래</a>
+            <a href="#s31" data-target="s31" class="nav-link text-gray-700 hover:bg-gray-100 p-2 rounded-lg transition-colors duration-200">제 31강: 대명사 ci</a>
+            <a href="#s32" data-target="s32" class="nav-link text-gray-700 hover:bg-gray-100 p-2 rounded-lg transition-colors duration-200">제 32강: 대명사 ne</a>
+            <a href="#s33" data-target="s33" class="nav-link text-gray-700 hover:bg-gray-100 p-2 rounded-lg transition-colors duration-200">제 33-34강: 반과거</a>
+            <a href="#s35" data-target="s35" class="nav-link text-gray-700 hover:bg-gray-100 p-2 rounded-lg transition-colors duration-200">제 35-38강: 재귀동사</a>
+            <a href="#s39" data-target="s39" class="nav-link text-gray-700 hover:bg-gray-100 p-2 rounded-lg transition-colors duration-200">제 39-41강: 관계대명사</a>
+            <a href="#s42" data-target="s42" class="nav-link text-gray-700 hover:bg-gray-100 p-2 rounded-lg transition-colors duration-200">제 42-45강: 비교급/최상급</a>
+            <a href="#s_end" data-target="s_end" class="nav-link text-gray-700 hover:bg-gray-100 p-2 rounded-lg transition-colors duration-200">결론</a>
+        </nav>
+
+        <main class="flex-1 md:ml-64 p-6 md:p-10">
+            <header class="mb-10">
+                <h1 class="text-4xl font-bold text-blue-700 mb-4">김쌤과 이탈리아어 배우기</h1>
+                <p class="text-xl text-gray-600">핵심 문법 학습 요약본 (24강 ~ 45강)</p>
+            </header>
+
+            <section id="s0" class="mb-12 bg-white p-6 rounded-lg shadow">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-4 border-b pb-2">✍️ 문서 작성에 대한 서문</h2>
+                <p class="text-base leading-relaxed">
+                    본 학습 요약본은 김쌤의 유튜브 이탈리아어 강의(24강 ~ 45강)를 효과적으로 복습하고, 특정 문법 사항을 영상에서 쉽게 찾아볼 수 있도록 돕기 위해 제작되었습니다. 각 강의의 핵심 내용을 체계적으로 정리하여, 학습자가 이탈리아어 문법의 뼈대를 단단히 세우고 자신의 것으로 만드는 데 도움을 주는 것을 목표로 합니다. 이 자료를 통해 복잡하게 느껴졌던 문법 개념들을 명확히 이해하고, 실제 문장에서 자신감 있게 활용하는 발판을 마련하시길 바랍니다.
+                </p>
+            </section>
+
+            <section id="s24" class="mb-12 bg-white p-6 rounded-lg shadow">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-4 border-b pb-2">1. 제 24강: 직설법 근과거 (Passato Prossimo)</h2>
+                
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">1.1. 직설법 근과거란?</h3>
+                <p class="mb-4">직설법 근과거(<code class="bg-gray-100 p-1 rounded">Passato Prossimo</code>)는 이탈리아어에서 과거에 완료된 특정 행위를 표현하는 가장 핵심적인 시제입니다. '어제 영화를 봤다', '아침을 먹었다'와 같이 과거의 구체적인 사건을 명확하게 전달하기 위해 반드시 마스터해야 하는 첫걸음이라 할 수 있습니다.</p>
+
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">1.2. 근과거의 기본 형태</h3>
+                <p class="mb-4">근과거는 복합시제이며, 그 기본 구조는 다음과 같습니다.</p>
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-md">
+                    <p class="font-medium"><b>조동사</b> (<code class="bg-white p-1 rounded">avere</code> 또는 <code class="bg-white p-1 rounded">essere</code>)의 현재형 + <b>과거분사</b> (<code class="bg-white p-1 rounded">p.p.</code>)</p>
+                </div>
+
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">1.3. 조동사 선택 기준</h3>
+                
+                <h4 class="text-lg font-medium text-gray-600 mt-4 mb-2">A. Avere + p.p.를 사용하는 경우</h4>
+                <p class="mb-2"><code class="bg-gray-100 p-1 rounded">avere</code>는 주로 행위의 대상, 즉 직접 목적어가 필요한 동사와 함께 사용됩니다.</p>
+                <ul class="list-disc list-inside mb-4 ml-4 space-y-1">
+                    <li>직접 목적어를 필요로 하는 모든 타동사 (예: <code class="bg-gray-100 p-1 rounded">mangiare</code>, <code class="bg-gray-100 p-1 rounded">leggere</code>, <code class="bg-gray-100 p-1 rounded">vedere</code>)</li>
+                    <li>일부 완전 자동사 (예: <code class="bg-gray-100 p-1 rounded">dormire</code>, <code class="bg-gray-100 p-1 rounded">viaggiare</code>, <code class="bg-gray-100 p-1 rounded">lavorare</code>)</li>
+                </ul>
+                <div class="overflow-x-auto rounded-lg border">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">인칭</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">parlare (말했다)</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ricevere (받았다)</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">capire (이해했다)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr><td class="px-6 py-4">io</td><td class="px-6 py-4">ho parlato</td><td class="px-6 py-4">ho ricevuto</td><td class="px-6 py-4">ho capito</td></tr>
+                            <tr><td class="px-6 py-4">tu</td><td class="px-6 py-4">hai parlato</td><td class="px-6 py-4">hai ricevuto</td><td class="px-6 py-4">hai capito</td></tr>
+                            <tr><td class="px-6 py-4">lui/lei</td><td class="px-6 py-4">ha parlato</td><td class="px-6 py-4">ha ricevuto</td><td class="px-6 py-4">ha capito</td></tr>
+                            <tr><td class="px-6 py-4">noi</td><td class="px-6 py-4">abbiamo parlato</td><td class="px-6 py-4">abbiamo ricevuto</td><td class="px-6 py-4">abbiamo capito</td></tr>
+                            <tr><td class="px-6 py-4">voi</td><td class="px-6 py-4">avete parlato</td><td class="px-6 py-4">avete ricevuto</td><td class="px-6 py-4">avete capito</td></tr>
+                            <tr><td class="px-6 py-4">loro</td><td class="px-6 py-4">hanno parlato</td><td class="px-6 py-4">hanno ricevuto</td><td class="px-6 py-4">hanno capito</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4 class="text-lg font-medium text-gray-600 mt-6 mb-2">B. Essere + p.p.를 사용하는 경우</h4>
+                <p class="mb-2"><code class="bg-gray-100 p-1 rounded">essere</code>는 주어의 이동이나 상태 변화를 나타내는 동사와 주로 결합합니다.</p>
+                <ul class="list-disc list-inside mb-4 ml-4 space-y-1">
+                    <li>왕래발착 동사 (이동 동사: <code class="bg-gray-100 p-1 rounded">andare</code>, <code class="bg-gray-100 p-1 rounded">venire</code>, <code class="bg-gray-100 p-1 rounded">partire</code>, <code class="bg-gray-100 p-1 rounded">arrivare</code> 등)</li>
+                    <li>상태 및 상태 변화 동사 (예: <code class="bg-gray-100 p-1 rounded">essere</code>, <code class="bg-gray-100 p-1 rounded">stare</code>, <code class="bg-gray-100 p-1 rounded">nascere</code>, <code class="bg-gray-100 p-1 rounded">morire</code>)</li>
+                    <li>재귀동사 (예: <code class="bg-gray-100 p-1 rounded">alzarsi</code>, <code class="bg-gray-100 p-1 rounded">lavarsi</code>)</li>
+                    <li>비인칭 동사 (예: <code class="bg-gray-100 p-1 rounded">piacere</code>)</li>
+                </ul>
+                <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded-md mb-4">
+                    <p class="font-medium"><b>핵심 규칙:</b> 조동사로 <code class="bg-white p-1 rounded">essere</code>를 사용할 때, <b>과거분사의 어미는 반드시 주어의 성(gender)과 수(number)에 일치</b>시켜야 합니다.</p>
+                </div>
+                <div class="overflow-x-auto rounded-lg border">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">인칭</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">andare (갔다)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr><td class="px-6 py-4">io</td><td class="px-6 py-4">sono andato / a</td></tr>
+                            <tr><td class="px-6 py-4">tu</td><td class="px-6 py-4">sei andato / a</td></tr>
+                            <tr><td class="px-6 py-4">lui/lei</td><td class="px-6 py-4">è andato / a</td></tr>
+                            <tr><td class="px-6 py-4">noi</td><td class="px-6 py-4">siamo andati / e</td></tr>
+                            <tr><td class="px-6 py-4">voi</td><td class="px-6 py-4">siete andati / e</td></tr>
+                            <tr><td class="px-6 py-4">loro</td><td class="px-6 py-4">sono andati / e</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">1.4. 과거분사(p.p.) 형태</h3>
+                <p class="mb-2">규칙 동사의 과거분사는 동사 원형의 어미에 따라 다음과 같이 변합니다.</p>
+                <ul class="list-disc list-inside mb-4 ml-4 space-y-1">
+                    <li><code class="bg-gray-100 p-1 rounded">-are</code> 동사 → <b>-ato</b> (예: <code class="bg-gray-100 p-1 rounded">parlare</code> → <code class="bg-gray-100 p-1 rounded">parlato</code>)</li>
+                    <li><code class="bg-gray-100 p-1 rounded">-ere</code> 동사 → <b>-uto</b> (예: <code class="bg-gray-100 p-1 rounded">ricevere</code> → <code class="bg-gray-100 p-1 rounded">ricevuto</code>)</li>
+                    <li><code class="bg-gray-100 p-1 rounded">-ire</code> 동사 → <b>-ito</b> (예: <code class="bg-gray-100 p-1 rounded">capire</code> → <code class="bg-gray-100 p-1 rounded">capito</code>)</li>
+                </ul>
+            </section>
+
+            <section id="s25" class="mb-12 bg-white p-6 rounded-lg shadow">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-4 border-b pb-2">2. 제 25강: 불규칙 과거분사 (Participio Passato Irregolare)</h2>
+                
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">2.1. 불규칙 과거분사 암기의 중요성</h3>
+                <p class="mb-4">이탈리아어 활용도를 높이기 위해서는 불규칙 과거분사를 암기하는 것이 필수적입니다. 특히 <code class="bg-gray-100 p-1 rounded">fare</code>, <code class="bg-gray-100 p-1 rounded">essere</code>, <code class="bg-gray-100 p-1 rounded">dire</code> 등 일상생활에서 자주 사용되는 기본 동사들의 불규칙 형태를 익히는 것은 유창한 과거 시제 표현의 핵심입니다.</p>
+
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">2.2. 주요 불규칙 과거분사 목록</h3>
+                <h4 class="text-lg font-medium text-gray-600 mt-4 mb-2">A. Avere를 조동사로 사용하는 동사</h4>
+                <div class="overflow-x-auto rounded-lg border mb-4">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">동사 원형</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">불규칙 p.p.</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">의미</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr><td class="px-6 py-4">scrivere</td><td class="px-6 py-4">scritto</td><td class="px-6 py-4">쓰다</td></tr>
+                            <tr><td class="px-6 py-4">leggere</td><td class="px-6 py-4">letto</td><td class="px-6 py-4">읽다</td></tr>
+                            <tr><td class="px-6 py-4">fare</td><td class="px-6 py-4">fatto</td><td class="px-6 py-4">하다</td></tr>
+                            <tr><td class="px-6 py-4">dire</td><td class="px-6 py-4">detto</td><td class="px-6 py-4">말하다</td></tr>
+                            <tr><td class="px-6 py-4">aprire</td><td class="px-6 py-4">aperto</td><td class="px-6 py-4">열다</td></tr>
+                            <tr><td class="px-6 py-4">chiudere</td><td class="px-6 py-4">chiuso</td><td class="px-6 py-4">닫다</td></tr>
+                            <tr><td class="px-6 py-4">prendere</td><td class="px-6 py-4">preso</td><td class="px-6 py-4">잡다, 타다, 먹다</td></tr>
+                            <tr><td class="px-6 py-4">mettere</td><td class="px-6 py-4">messo</td><td class="px-6 py-4">놓다</td></tr>
+                            <tr><td class="px-6 py-4">vedere</td><td class="px-6 py-4">visto</td><td class="px-6 py-4">보다</td></tr>
+                            <tr><td class="px-6 py-4">chiedere</td><td class="px-6 py-4">chiesto</td><td class="px-6 py-4">묻다, 요청하다</td></tr>
+                            <tr><td class="px-6 py-4">rispondere</td><td class="px-6 py-4">risposto</td><td class="px-6 py-4">대답하다</td></tr>
+                            <tr><td class="px-6 py-4">perdere</td><td class="px-6 py-4">perso</td><td class="px-6 py-4">잃다</td></tr>
+                            <tr><td class="px-6 py-4">correre</td><td class="px-6 py-4">corso</td><td class="px-6 py-4">달리다</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h4 class="text-lg font-medium text-gray-600 mt-6 mb-2">B. Essere를 조동사로 사용하는 동사</h4>
+                <div class="overflow-x-auto rounded-lg border">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">동사 원형</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">불규칙 p.p.</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">의미</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr><td class="px-6 py-4">essere</td><td class="px-6 py-4">stato</td><td class="px-6 py-4">~이다, 있다</td></tr>
+                            <tr><td class="px-6 py-4">vivere</td><td class="px-6 py-4">vissuto</td><td class="px-6 py-4">살다</td></tr>
+                            <tr><td class="px-6 py-4">nascere</td><td class="px-6 py-4">nato</td><td class="px-6 py-4">태어나다</td></tr>
+                            <tr><td class="px-6 py-4">morire</td><td class="px-6 py-4">morto</td><td class="px-6 py-4">죽다</td></tr>
+                            <tr><td class="px-6 py-4">rimanere</td><td class="px-6 py-4">rimasto</td><td class="px-6 py-4">남다</td></tr>
+                            <tr><td class="px-6 py-4">scendere</td><td class="px-6 py-4">sceso</td><td class="px-6 py-4">내려가다</td></tr>
+                            <tr><td class="px-6 py-4">succedere</td><td class="px-6 py-4">successo</td><td class="px-6 py-4">일어나다, 발생하다</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">2.3. 조동동사 (Dovere, Potere, Volere)의 근과거 활용법</h3>
+                <p class="mb-4">~해야 한다(<code class="bg-gray-100 p-1 rounded">dovere</code>), ~할 수 있다(<code class="bg-gray-100 p-1 rounded">potere</code>), ~하고 싶다(<code class="bg-gray-100 p-1 rounded">volere</code>)와 같은 조동동사를 근과거 시제로 사용할 때, 조동사 <code class="bg-gray-100 p-1 rounded">avere</code>와 <code class="bg-gray-100 p-1 rounded">essere</code>의 선택은 <b>뒤따르는 본동사의 특성</b>에 따라 결정됩니다.</p>
+                <div class="space-y-4">
+                    <div class="bg-gray-50 p-4 rounded-lg border">
+                        <p class="font-medium">Case 1: 본동사가 <code class="bg-white p-1 rounded">avere</code>를 사용하는 경우</p>
+                        <ul class="list-disc list-inside ml-4 mt-2 text-sm text-gray-700">
+                            <li>본동사: <code class="bg-white p-1 rounded">lavorare</code> (일하다) → <code class="bg-white p-1 rounded">ho lavorato</code> (<code class="bg-white p-1 rounded">avere</code> 사용)</li>
+                            <li>근과거: <code class="bg-white p-1 rounded"><b>Ho dovuto lavorare</b></code>. (나는 일해야만 했다.)</li>
+                            <li>설명: 본동사 <code class="bg-white p-1 rounded">lavorare</code>가 <code class="bg-white p-1 rounded">avere</code>를 쓰므로, 조동동사 <code class="bg-white p-1 rounded">dovere</code> 역시 <code class="bg-white p-1 rounded">avere</code>를 조동사로 사용합니다.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg border">
+                        <p class="font-medium">Case 2: 본동사가 <code class="bg-white p-1 rounded">essere</code>를 사용하는 경우</p>
+                        <ul class="list-disc list-inside ml-4 mt-2 text-sm text-gray-700">
+                            <li>본동사: <code class="bg-white p-1 rounded">uscire</code> (외출하다) → <code class="bg-white p-1 rounded">sono uscito/a</code> (<code class="bg-white p-1 rounded">essere</code> 사용)</li>
+                            <li>근과거: <code class="bg-white p-1 rounded"><b>Sono dovuto/a uscire</b></code>. (나는 외출해야만 했다.)</li>
+                            <li>설명: 본동사 <code class="bg-white p-1 rounded">uscire</code>가 <code class="bg-white p-1 rounded">essere</code>를 쓰므로, <code class="bg-white p-1 rounded">dovere</code> 역시 <code class="bg-white p-1 rounded">essere</code>를 조동사로 사용하며 과거분사는 주어의 성과 수에 일치시켜야 합니다.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="s26" class="mb-12 bg-white p-6 rounded-lg shadow">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-4 border-b pb-2">3. 제 26강: 직접 목적 대명사 (Pronomi Diretti)</h2>
+                
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">3.1. 직접 목적 대명사란?</h3>
+                <p class="mb-4">직접 목적 대명사는 문장에서 <b>'~을/를'</b>에 해당하는 목적어를 대신하여 반복을 피하고 문장을 간결하게 만들어주는 필수 문법 요소입니다.</p>
+
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">3.2. 직접 목적 대명사의 형태</h3>
+                <h4 class="text-lg font-medium text-gray-600 mt-4 mb-2">표 1: 약세형 (동사 앞 위치)</h4>
+                <p class="mb-2 text-sm text-gray-600">약세형은 문장에서 동사를 강조할 때 사용되며, 동사 바로 앞에 위치합니다.</p>
+                <div class="overflow-x-auto rounded-lg border mb-4">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">인칭</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">대명사</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">의미</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr><td class="px-6 py-4">1인칭 단수</td><td class="px-6 py-4">mi</td><td class="px-6 py-4">나를</td></tr>
+                            <tr><td class="px-6 py-4">2인칭 단수</td><td class="px-6 py-4">ti</td><td class="px-6 py-4">너를</td></tr>
+                            <tr><td class="px-6 py-4">3인칭 단수</td><td class="px-6 py-4">lo / la</td><td class="px-6 py-4">그를, 그것(남성)을 / 그녀를, 그것(여성)을</td></tr>
+                            <tr><td class="px-6 py-4">1인칭 복수</td><td class="px-6 py-4">ci</td><td class="px-6 py-4">우리를</td></tr>
+                            <tr><td class="px-6 py-4">2인칭 복수</td><td class="px-6 py-4">vi</td><td class="px-6 py-4">너희를</td></tr>
+                            <tr><td class="px-6 py-4">3인칭 복수</td><td class="px-6 py-4">li / le</td><td class="px-6 py-4">그들을, 그것(남성)들을 / 그녀들을, 그것(여성)들을</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4 class="text-lg font-medium text-gray-600 mt-6 mb-2">표 2: 강세형 (동사 뒤 위치)</h4>
+                <p class="mb-2 text-sm text-gray-600">강세형은 목적어, 즉 대명사 자체를 강조하고 싶을 때 사용되며, 동사 뒤에 위치합니다.</p>
+                <div class="overflow-x-auto rounded-lg border">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">인칭</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">대명사</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr><td class="px-6 py-4">1인칭 단수</td><td class="px-6 py-4">me</td></tr>
+                            <tr><td class="px-6 py-4">2인칭 단수</td><td class="px-6 py-4">te</td></tr>
+                            <tr><td class="px-6 py-4">3인칭 단수</td><td class="px-6 py-4">lui / lei</td></tr>
+                            <tr><td class="px-6 py-4">1인칭 복수</td><td class="px-6 py-4">noi</td></tr>
+                            <tr><td class="px-6 py-4">2인칭 복수</td><td class="px-6 py-4">voi</td></tr>
+                            <tr><td class="px-6 py-4">3인칭 복수</td><td class="px-6 py-4">loro</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">3.3. 핵심 용법</h3>
+                <ul class="list-disc list-inside mb-4 ml-4 space-y-2">
+                    <li><b>위치와 강조의 차이</b>
+                        <ul class="list-decimal list-inside ml-6 mt-1 text-sm text-gray-700">
+                            <li>약세형 (동사 강조): <code class="bg-gray-100 p-1 rounded">Loro <b>ti</b> amano.</code> (그들은 너를 사랑해.)</li>
+                            <li>강세형 (목적어 강조): <code class="bg-gray-100 p-1 rounded">Loro amano <b>te</b>.</code> (그들은 사랑해, 바로 너를.)</li>
+                        </ul>
+                    </li>
+                    <li><b>존칭 대명사 La</b>
+                        <p class="mt-1 text-sm text-gray-700">상대방을 존중하여 '당신을'이라고 표현할 때는 <b>La</b>를 사용합니다. 상대방의 실제 성별과 관계없이 항상 <b>La</b> 형태를 유지합니다.<br>
+                        예: <code class="bg-gray-100 p-1 rounded">Signor Rossi, <b>La</b> vedo domani.</code> (로시 씨, 내일 당신을 뵙겠습니다.)</p>
+                    </li>
+                    <li><b>한국어와의 의미 차이</b>
+                        <p class="mt-1 text-sm text-gray-700"><code class="bg-gray-100 p-1 rounded">salutare</code> (안부를 전하다), <code class="bg-gray-100 p-1 rounded">ringraziare</code> (감사하다) 등의 동사는 한국어로는 '~에게'라고 해석되기 쉽지만, 이탈리아어에서는 직접 목적어를 취하는 타동사입니다.<br>
+                        예: <code class="bg-gray-100 p-1 rounded"><b>La</b> ringrazio molto.</code></p>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="s27" class="mb-12 bg-white p-6 rounded-lg shadow">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-4 border-b pb-2">4. 제 27강: 간접 목적 대명사 (Pronomi Indiretti)</h2>
+                
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">4.1. 간접 목적 대명사란?</h3>
+                <p class="mb-4">간접 목적 대명사는 문장에서 <b>'~에게'</b>라는 의미를 전달하는 역할을 합니다. 특히 <code class="bg-gray-100 p-1 rounded">piacere</code>와 같은 특정 동사군과 함께 쓰일 때 중요합니다.</p>
+
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">4.2. 간접 목적 대명사의 형태</h3>
+                <h4 class="text-lg font-medium text-gray-600 mt-4 mb-2">표 1: 약세형 (동사 앞 위치)</h4>
+                <div class="overflow-x-auto rounded-lg border mb-4">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">인칭</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">대명사</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">의미</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr><td class="px-6 py-4">1인칭 단수</td><td class="px-6 py-4">mi</td><td class="px-6 py-4">나에게</td></tr>
+                            <tr><td class="px-6 py-4">2인칭 단수</td><td class="px-6 py-4">ti</td><td class="px-6 py-4">너에게</td></tr>
+                            <tr><td class="px-6 py-4">3인칭 단수</td><td class="px-6 py-4">gli / le</td><td class="px-6 py-4">그에게 / 그녀에게</td></tr>
+                            <tr><td class="px-6 py-4">1인칭 복수</td><td class="px-6 py-4">ci</td><td class="px-6 py-4">우리에게</td></tr>
+                            <tr><td class="px-6 py-4">2인칭 복수</td><td class="px-6 py-4">vi</td><td class="px-6 py-4">너희에게</td></tr>
+                            <tr><td class="px-6 py-4">3인칭 복수</td><td class="px-6 py-4">gli (loro)</td><td class="px-6 py-4">그들에게, 그녀들에게</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-sm text-gray-600 mb-4"><b>참고:</b> 1, 2인칭(<code class="bg-gray-100 p-1 rounded">mi</code>, <code class="bg-gray-100 p-1 rounded">ti</code>, <code class="bg-gray-100 p-1 rounded">ci</code>, <code class="bg-gray-100 p-1 rounded">vi</code>)은 직접 목적 대명사와 형태가 동일하지만, 3인칭(<code class="bg-gray-100 p-1 rounded">gli</code>, <code class="bg-gray-100 p-1 rounded">le</code>)은 다릅니다.</p>
+
+                <h4 class="text-lg font-medium text-gray-600 mt-6 mb-2">표 2: 강세형 (전치사 a + 대명사)</h4>
+                <div class="overflow-x-auto rounded-lg border">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">인칭</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">대명사</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr><td class="px-6 py-4">1인칭 단수</td><td class="px-6 py-4">a me</td></tr>
+                            <tr><td class="px-6 py-4">2인칭 단수</td><td class="px-6 py-4">a te</td></tr>
+                            <tr><td class="px-6 py-4">3인칭 단수</td><td class="px-6 py-4">a lui / a lei</td></tr>
+                            <tr><td class="px-6 py-4">1인칭 복수</td><td class="px-6 py-4">a noi</td></tr>
+                            <tr><td class="px-6 py-4">2인칭 복수</td><td class="px-6 py-4">a voi</td></tr>
+                            <tr><td class="px-6 py-4">3인칭 복수</td><td class="px-6 py-4">a loro</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">4.3. 핵심 용법: Piacere 동사군</h3>
+                <p class="mb-4"><code class="bg-gray-100 p-1 rounded">piacere</code> 동사는 [피자가] [나에게] 마음에 든다 라는 구조로 표현됩니다.</p>
+                <ul class="list-disc list-inside mb-4 ml-4 space-y-2">
+                    <li><b>기본 구조:</b> <code class="bg-gray-100 p-1 rounded">A me piace la pizza.</code> (나에게 피자가 마음에 든다.) → <code class="bg-gray-100 p-1 rounded"><b>Mi</b> piace la pizza.</code> (일반적인 표현)</li>
+                    <li><b>수일치 핵심 규칙:</b> <code class="bg-gray-100 p-1 rounded">piacere</code> 동사의 형태는 행위를 하는 사람이 아닌 <b>주어(마음에 드는 대상)</b>의 수에 따라 결정됩니다.
+                        <ul class="list-decimal list-inside ml-6 mt-1 text-sm text-gray-700">
+                            <li>주어가 단수일 때: <code class="bg-gray-100 p-1 rounded">piace</code></li>
+                            <li>주어가 복수일 때: <code class="bg-gray-100 p-1 rounded">piacciono</code></li>
+                            <li>예 1: <code class="bg-gray-100 p-1 rounded">Mi <b>piace</b> il gelato.</code> (주어 <code class="bg-gray-100 p-1 rounded">il gelato</code>가 단수)</li>
+                            <li>예 2: <code class="bg-gray-100 p-1 rounded">Mi <b>piacciono</b> gli spaghetti.</code> (주어 <code class="bg-gray-100 p-1 rounded">gli spaghetti</code>가 복수)</li>
+                        </ul>
+                    </li>
+                    <li><b>Piacere와 유사한 구조의 동사들:</b> <code class="bg-gray-100 p-1 rounded">servire</code> (필요하다), <code class="bg-gray-100 p-1 rounded">mancare</code> (그립다, 부족하다), <code class="bg-gray-100 p-1 rounded">bastare</code> (충분하다), <code class="bg-gray-100 p-1 rounded">interessare</code> (흥미롭다)</li>
+                </ul>
+            </section>
+
+            <section id="s28" class="mb-12 bg-white p-6 rounded-lg shadow">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-4 border-b pb-2">5. 제 28강: 결합 대명사 (Pronomi Combinati)</h2>
+                
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">5.1. 결합 대명사란?</h3>
+                <p class="mb-4">결합 대명사는 하나의 문장 안에서 간접 목적 대명사('~에게')와 직접 목적 대명사('~을/를')를 함께 사용하여 문장을 더욱 간결하게 만드는 기술입니다.</p>
+
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">5.2. 기본 구조와 순서</h3>
+                <p class="mb-4">결합 대명사의 문장 내 어순은 다음과 같습니다.</p>
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-md">
+                    <p class="font-medium"><b>간접 목적 대명사</b> + <b>직접 목적 대명사</b> + <b>동사</b></p>
+                </div>
+
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">5.3. 형태 변화 규칙</h3>
+                <h4 class="text-lg font-medium text-gray-600 mt-4 mb-2">1. 1, 2인칭 간접 목적 대명사 (<code class="bg-gray-100 p-1 rounded">mi</code>, <code class="bg-gray-100 p-1 rounded">ti</code>, <code class="bg-gray-100 p-1 rounded">ci</code>, <code class="bg-gray-100 p-1 rounded">vi</code>)</h4>
+                <p class="mb-2">이 대명사들은 뒤따르는 직접 목적 대명사(<code class="bg-gray-100 p-1 rounded">lo</code>, <code class="bg-gray-100 p-1 rounded">la</code>, <code class="bg-gray-100 p-1 rounded">li</code>, <code class="bg-gray-100 p-1 rounded">le</code>) 앞에서 끝 모음 <b>i가 e로 바뀝니다.</b> 결합된 두 대명사는 띄어서 씁니다.</p>
+                <div class="overflow-x-auto rounded-lg border mb-4">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">결합 전</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">결합 후</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">의미</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr><td class="px-6 py-4">mi + lo</td><td class="px-6 py-4">me lo</td><td class="px-6 py-4">나에게 그것을</td></tr>
+                            <tr><td class="px-6 py-4">ti + la</td><td class="px-6 py-4">te la</td><td class="px-6 py-4">너에게 그것을</td></tr>
+                            <tr><td class="px-6 py-4">ci + li</td><td class="px-6 py-4">ce li</td><td class="px-6 py-4">우리에게 그것들을</td></tr>
+                            <tr><td class="px-6 py-4">vi + le</td><td class="px-6 py-4">ve le</td><td class="px-6 py-4">너희에게 그것들을</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4 class="text-lg font-medium text-gray-600 mt-6 mb-2">2. 3인칭 간접 목적 대명사 (<code class="bg-gray-100 p-1 rounded">gli</code>, <code class="bg-gray-100 p-1 rounded">le</code>, <code class="bg-gray-100 p-1 rounded">Le</code>, <code class="bg-gray-100 p-1 rounded">loro</code>)</h4>
+                <p class="mb-2">3인칭 간접 목적 대명사는 성별과 수에 관계없이 모두 <b>glie- 형태로 통일</b>되며, 뒤따르는 직접 목적 대명사와 <b>한 단어로 붙여서</b> 씁니다.</p>
+                <ul class="list-disc list-inside mb-4 ml-4 space-y-1">
+                    <li><code class="bg-gray-100 p-1 rounded">gli</code> (그에게) + <code class="bg-gray-100 p-1 rounded">lo</code> → <code class="bg-green-100 p-1 rounded"><b>glielo</b></code> (그에게 그것을)</li>
+                    <li><code class="bg-gray-100 p-1 rounded">le</code> (그녀에게) + <code class="bg-gray-100 p-1 rounded">la</code> → <code class="bg-green-100 p-1 rounded"><b>gliela</b></code> (그녀에게 그것을)</li>
+                    <li><code class="bg-gray-100 p-1 rounded">loro</code> (그들에게) + <code class="bg-gray-100 p-1 rounded">li</code> → <code class="bg-green-100 p-1 rounded"><b>glieli</b></code> (그들에게 그것들을)</li>
+                </ul>
+
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">5.4. 복합시제에서의 성수일치</h3>
+                <p class="mb-2">결합 대명사가 복합시제와 함께 사용될 때, 과거분사는 항상 결합된 대명사 중 <b>직접 목적 대명사</b>의 성과 수에 일치시켜야 합니다.</p>
+                <div class="bg-gray-50 p-4 rounded-lg border">
+                    <p class="mb-1">예문: <code class="bg-white p-1 rounded">Marco mi ha dato la penna.</code> (마르코가 나에게 그 펜을 주었다.)</p>
+                    <p class="mb-1">→ <code class="bg-white p-1 rounded">Marco <b>me l'ha data</b>.</code> (마르코가 나에게 그것을 주었다.)</p>
+                    <p class="text-sm text-gray-700"><b>설명:</b> 과거분사 <code class="bg-white p-1 rounded">data</code>는 직접 목적 대명사 <code class="bg-white p-1 rounded">la</code>(<code class="bg-white p-1 rounded">penna</code>, 여성 단수)에 일치합니다.</p>
+                </div>
+            </section>
+
+            <section id="s29" class="mb-12 bg-white p-6 rounded-lg shadow">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-4 border-b pb-2">6. 제 29강 & 30강: 직설법 미래 (Futuro Semplice & Futuro Anteriore)</h2>
+
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">6.1. 미래 시제의 다양한 쓰임새</h3>
+                <p class="mb-4">미래 시제는 단순히 미래의 사건을 넘어, 현재나 과거에 대한 추측, 부드러운 명령 등 다양한 뉘앙스를 표현하는 데 폭넓게 사용됩니다.</p>
+
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">6.2. 단순 미래 (Futuro Semplice)</h3>
+                <h4 class="text-lg font-medium text-gray-600 mt-4 mb-2">A. 형태</h4>
+                <p class="mb-2 text-sm text-gray-600"><code class="bg-gray-100 p-1 rounded">-are</code> 동사와 <code class="bg-gray-100 p-1 rounded">-ere</code> 동사의 변형이 같습니다.</p>
+                <div class="overflow-x-auto rounded-lg border mb-4">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">인칭</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">-are / -ere 동사 (-erò)</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">-ire 동사 (-irò)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr><td class="px-6 py-4">io</td><td class="px-6 py-4">-erò</td><td class="px-6 py-4">-irò</td></tr>
+                            <tr><td class="px-6 py-4">tu</td><td class="px-6 py-4">-erai</td><td class="px-6 py-4">-irai</td></tr>
+                            <tr><td class="px-6 py-4">lui/lei</td><td class="px-6 py-4">-erà</td><td class="px-6 py-4">-irà</td></tr>
+                            <tr><td class="px-6 py-4">noi</td><td class="px-6 py-4">-eremo</td><td class="px-6 py-4">-iremo</td></tr>
+                            <tr><td class="px-6 py-4">voi</td><td class="px-6 py-4">-erete</td><td class="px-6 py-4">-irete</td></tr>
+                            <tr><td class="px-6 py-4">loro</td><td class="px-6 py-4">-eranno</td><td class="px-6 py-4">-iranno</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-sm text-gray-600 mb-4"><b>주요 불규칙 동사:</b> <code class="bg-gray-100 p-1 rounded">essere</code> → <b>sarò</b>, <code class="bg-gray-100 p-1 rounded">avere</code> → <b>avrò</b>, <code class="bg-gray-100 p-1 rounded">andare</code> → <b>andrò</b>, <code class="bg-gray-100 p-1 rounded">fare</code> → <b>farò</b>, <code class="bg-gray-100 p-1 rounded">vedere</code> → <b>vedrò</b></p>
+                
+                <h4 class="text-lg font-medium text-gray-600 mt-6 mb-2">B. 핵심 용법</h4>
+                <ul class="list-disc list-inside mb-4 ml-4 space-y-2">
+                    <li><b>미래의 행위/상태 표현:</b><br><span class="text-sm text-gray-700 ml-4">예: <code class="bg-gray-100 p-1 rounded"><b>Tornerò</b> in Corea l'anno prossimo.</code> (나는 내년에 한국에 돌아갈 것이다.)</span></li>
+                    <li><b>현재에 대한 추측 (아마 ~일 것이다):</b><br><span class="text-sm text-gray-700 ml-4">예: <code class="bg-gray-100 p-1 rounded">Che ore sono? - Non so, <b>saranno</b> le undici.</code> (지금 몇 시야? - 몰라, 아마 11시쯤일 거야.)</span></li>
+                    <li><b>부드러운 명령이나 권유:</b><br><span class="text-sm text-gray-700 ml-4">예: <code class="bg-gray-100 p-1 rounded">Ragazzi, <b>studierete</b> con impegno!</code> (여러분, 열심히 공부하세요!)</span></li>
+                </ul>
+                
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">6.3. 선립 미래 (Futuro Anteriore)</h3>
+                <h4 class="text-lg font-medium text-gray-600 mt-4 mb-2">A. 형태</h4>
+                <p class="mb-4">미래의 특정 시점 이전에 완료될 행위를 나타내는 복합시제입니다.</p>
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-md">
+                    <p class="font-medium"><b>조동사</b> (<code class="bg-white p-1 rounded">avere</code> 또는 <code class="bg-white p-1 rounded">essere</code>)의 <b>단순 미래형</b> + <b>과거분사</b> (<code class="bg-white p-1 rounded">p.p.</code>)<br>
+                    (예: <code class="bg-white p-1 rounded">avrò parlato</code>, <code class="bg-white p-1 rounded">sarò andato/a</code>)</p>
+                </div>
+
+                <h4 class="text-lg font-medium text-gray-600 mt-6 mb-2">B. 핵심 용법</h4>
+                <ul class="list-disc list-inside mb-4 ml-4 space-y-2">
+                    <li><b>미래에 완료될 행위 (선후 관계):</b><br><span class="text-sm text-gray-700 ml-4">예: <code class="bg-gray-100 p-1 rounded">Dopo che <b>avrò parlato</b> con lui, ti racconterò tutto.</code> (내가 그와 이야기를 끝내고 나면, 너에게 모든 것을 설명해 줄게.)</span></li>
+                    <li><b>과거에 대한 추측 (아마 ~였을 것이다):</b><br><span class="text-sm text-gray-700 ml-4">예: <code class="bg-gray-100 p-1 rounded"><b>Saranno state</b> le undici.</code> (아마 11시쯤이었을 것이다.)</span></li>
+                </ul>
+            </section>
+
+            <section id="s31" class="mb-12 bg-white p-6 rounded-lg shadow">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-4 border-b pb-2">7. 제 31강: 대명사 ci</h2>
+                
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">7.1. 다기능 대명사 ci</h3>
+                <p class="mb-4">대명사 <code class="bg-gray-100 p-1 rounded">ci</code>는 단순히 '우리'를 의미하는 것을 넘어 장소, 상황 등 다양한 맥락에서 활용되는 매우 중요한 다기능 대명사입니다.</p>
+
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">7.2. ci의 핵심 용법</h3>
+                <ul class="list-disc list-inside mb-4 ml-4 space-y-2">
+                    <li><b>직접 목적어</b> ('우리를'): <code class="bg-gray-100 p-1 rounded">Mario <b>ci</b> sta chiamando.</code></li>
+                    <li><b>간접 목적어</b> ('우리에게'): <code class="bg-gray-100 p-1 rounded">Luigi <b>ci</b> ha offerto il pranzo.</code></li>
+                    <li><b>재귀 대명사</b> ('우리 자신을/에게'): <code class="bg-gray-100 p-1 rounded"><b>Ci</b> alziamo alle sette.</code></li>
+                    <li><b>장소 부사</b> ('그곳에, 거기에'): <code class="bg-gray-100 p-1 rounded">a / in / su</code> + 장소 명사를 대신.<br><span class="text-sm text-gray-700 ml-4">예: <code class="bg-gray-100 p-1 rounded">Vai dal medico? Sì, <b>ci</b> vado oggi.</code> (응, 오늘 거기에 가.)</span></li>
+                    <li><b>특정 구문 대체</b> ('그것에 대해'): <code class="bg-gray-100 p-1 rounded">a / su / in</code> + 사물/사실을 대신. (<code class="bg-gray-100 p-1 rounded">pensare a</code>, <code class="bg-gray-100 p-1 rounded">credere a</code> 등)<br><span class="text-sm text-gray-700 ml-4">예: <code class="bg-gray-100 p-1 rounded">Pensi alla festa? Sì, <b>ci</b> penso.</code> (응, 그것에 대해 생각해.)</span></li>
+                    <li><b>con + 사람/사물 대체</b> ('~와 함께'):<br><span class="text-sm text-gray-700 ml-4">예: <code class="bg-gray-100 p-1 rounded">Esci con Maria? Sì, <b>ci</b> esco.</code> (응, 그녀와 함께 나가.)</span></li>
+                </ul>
+            </section>
+
+            <section id="s32" class="mb-12 bg-white p-6 rounded-lg shadow">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-4 border-b pb-2">8. 제 32강: 대명사 ne</h2>
+                
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">8.1. 독특한 개념의 대명사 ne</h3>
+                <p class="mb-4">대명사 <code class="bg-gray-100 p-1 rounded">ne</code>는 전체 중 일부(부분), 수량, 출처(~로부터), 주제(~에 관하여) 등을 나타내는 데 필수적인 역할을 합니다.</p>
+
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">8.2. ne의 핵심 용법</h3>
+                <ul class="list-disc list-inside mb-4 ml-4 space-y-2">
+                    <li><b>부분사</b> ('그것(들) 중에 일부'): '전체 중 일부'를 의미하며 뒤에는 반드시 수나 양을 나타내는 표현이 따라옵니다.<br>
+                        <span class="text-sm text-gray-700 ml-4">예: <code class="bg-gray-100 p-1 rounded">Quanti caffè hai preso? <b>Ne</b> ho bevuti tre.</code> (그것 중에 세 잔 마셨어.)</span>
+                        <div class="bg-yellow-50 border-l-4 border-yellow-500 p-3 rounded-md my-2 ml-4">
+                            <p class="text-sm font-medium"><b>핵심 규칙:</b> 복합시제에서 <code class="bg-white p-1 rounded">ne</code>가 사용될 경우, <b>과거분사는 <code class="bg-white p-1 rounded">ne</code>가 지칭하는 명사의 성과 수에 일치</b>시켜야 합니다.</p>
+                        </div>
+                    </li>
+                    <li><b>장소 부사</b> ('그곳으로부터'): <code class="bg-gray-100 p-1 rounded">da</code> + 장소를 대신하여 '거기서부터'라는 출처의 의미를 나타냅니다.<br><span class="text-sm text-gray-700 ml-4">예: <code class="bg-gray-100 p-1 rounded">Sono stato al bar e <b>ne</b> esco proprio ora.</code> (바에 있었고, 지금 막 거기서부터 나온다.)</span></li>
+                    <li><b>특정 구문 대체</b> ('그것에 관하여'): <code class="bg-gray-100 p-1 rounded">di</code> + 사물/사람/사실을 대신하여 '~에 관하여'라는 의미를 나타냅니다.<br><span class="text-sm text-gray-700 ml-4">예: <code class="bg-gray-100 p-1 rounded">Hai visto il nuovo film? Cosa <b>ne</b> pensi?</code> (새 영화 봤어? 그것에 대해 어떻게 생각해?)</span></li>
+                </ul>
+            </section>
+
+            <section id="s33" class="mb-12 bg-white p-6 rounded-lg shadow">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-4 border-b pb-2">9. 제 33강 & 34강: 직설법 반과거 (Imperfetto)</h2>
+
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">9.1. 반과거란? - 과거를 그리는 붓</h3>
+                <p class="mb-4">반과거(<code class="bg-gray-100 p-1 rounded">Imperfetto</code>) 시제는 과거의 특정 완료된 사건을 나타내는 근과거와 달리, 과거의 배경, 지속적인 상태, 반복적인 습관을 묘사하는 데 사용됩니다.</p>
+
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">9.2. 반과거 동사 변형</h3>
+                <div class="overflow-x-auto rounded-lg border mb-4">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">인칭</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">-are (-avo)</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">-ere (-evo)</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">-ire (-ivo)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr><td class="px-6 py-4">io</td><td class="px-6 py-4">-avo</td><td class="px-6 py-4">-evo</td><td class="px-6 py-4">-ivo</td></tr>
+                            <tr><td class="px-6 py-4">tu</td><td class="px-6 py-4">-avi</td><td class="px-6 py-4">-evi</td><td class="px-6 py-4">-ivi</td></tr>
+                            <tr><td class="px-6 py-4">lui/lei</td><td class="px-6 py-4">-ava</td><td class="px-6 py-4">-eva</td><td class="px-6 py-4">-iva</td></tr>
+                            <tr><td class="px-6 py-4">noi</td><td class="px-6 py-4">-avamo</td><td class="px-6 py-4">-evamo</td><td class="px-6 py-4">-ivamo</td></tr>
+                            <tr><td class="px-6 py-4">voi</td><td class="px-6 py-4">-avate</td><td class="px-6 py-4">-evate</td><td class="px-6 py-4">-ivate</td></tr>
+                            <tr><td class="px-6 py-4">loro</td><td class="px-6 py-4">-avano</td><td class="px-6 py-4">-evano</td><td class="px-6 py-4">-ivano</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-sm text-gray-600 mb-4"><b>주요 불규칙 동사:</b> <code class="bg-gray-100 p-1 rounded">essere</code> → <b>ero</b>, <code class="bg-gray-100 p-1 rounded">fare</code> → <b>facevo</b>, <code class="bg-gray-100 p-1 rounded">dire</code> → <b>dicevo</b></p>
+
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">9.3. 반과거의 핵심 용법</h3>
+                <ul class="list-disc list-inside mb-4 ml-4 space-y-2">
+                    <li><b>과거의 지속적인 상황/상태:</b><br><span class="text-sm text-gray-700 ml-4">예: <code class="bg-gray-100 p-1 rounded">Mio padre <b>lavorava</b> in banca.</code> (나의 아버지는 은행에서 일하셨었다.)</span></li>
+                    <li><b>과거의 습관적인 행위 (~하곤 했다):</b><br><span class="text-sm text-gray-700 ml-4">예: <code class="bg-gray-100 p-1 rounded">Da bambino, <b>giocavo</b> sempre con i miei fratelli.</code> (어렸을 때, 나는 항상 형제들과 놀곤 했다.)</span></li>
+                    <li><b>과거 상황 묘사 (배경 설명):</b><br><span class="text-sm text-gray-700 ml-4">예: <code class="bg-gray-100 p-1 rounded"><b>Era</b> una casa vecchia e <b>faceva</b> molto freddo.</code> (오래된 집이었고 날씨가 매우 추웠다.)</span></li>
+                    <li><b>과거의 동시 동작 (~하면서 ~했다):</b><br><span class="text-sm text-gray-700 ml-4">예: <code class="bg-gray-100 p-1 rounded">Mentre <b>facevo</b> colazione, <b>ascoltavo</b> la musica.</code> (내가 아침 식사를 하는 동안, 음악을 들었다.)</span></li>
+                </ul>
+
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">9.4. 근과거와의 결합: 배경과 사건의 조화</h3>
+                <p class="mb-2">반과거는 배경이나 지속적인 상황을, 근과거는 그 상황을 중단시킨 짧고 구체적인 행위를 나타냅니다.</p>
+                <div class="bg-gray-50 p-4 rounded-lg border">
+                    <p class="mb-1">예문: <code class="bg-white p-1 rounded">Mentre <b>lavoravo</b>, <b>ho ricevuto</b> una telefonata.</code> (내가 일하고 있는 동안, 전화 한 통을 받았다.)</p>
+                    <ul class="list-disc list-inside ml-4 mt-2 text-sm text-gray-700">
+                        <li><code class="bg-white p-1 rounded">lavoravo</code> (반과거): 배경 상황 (일하고 있었다)</li>
+                        <li><code class="bg-white p-1 rounded">ho ricevuto</code> (근과거): 발생한 사건 (전화를 받았다)</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="s35" class="mb-12 bg-white p-6 rounded-lg shadow">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-4 border-b pb-2">10. 제 35강 ~ 38강: 재귀동사 (Verbi Riflessivi)</h2>
+                
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">10.1. 재귀동사란? - 행위가 나에게 돌아오다</h3>
+                <p class="mb-4">주어의 행위가 타인이 아닌 자기 자신에게 미치는 경우를 표현하는 동사입니다.</p>
+                
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">10.2. 재귀동사의 기본 구조</h3>
+                <ul class="list-disc list-inside mb-4 ml-4 space-y-2">
+                    <li><b>형태:</b> 재귀 대명사 (<code class="bg-gray-100 p-1 rounded">mi</code>, <code class="bg-gray-100 p-1 rounded">ti</code>, <code class="bg-gray-100 p-1 rounded">si</code>, <code class="bg-gray-100 p-1 rounded">ci</code>, <code class="bg-gray-100 p-1 rounded">vi</code>, <code class="bg-gray-100 p-1 rounded">si</code>) + 동사</li>
+                    <li><b>복합시제:</b> 항상 조동사 <b>essere</b>를 사용하며, 과거분사는 주어의 성과 수에 일치.<br><span class="text-sm text-gray-700 ml-4">예: <code class="bg-gray-100 p-1 rounded">Ieri Maria <b>si è alzata</b> presto.</code> (마리아는 어제 일찍 일어났다.)</span></li>
+                </ul>
+
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">10.3. 재귀동사의 종류</h3>
+                <div class="space-y-4">
+                    <div class="border-b pb-4">
+                        <h4 class="text-lg font-medium text-gray-600">본질적 재귀동사 (35강)</h4>
+                        <p class="text-sm text-gray-700 mt-1"><b>정의:</b> 행위의 목적어가 주어 자신인 경우. 별도의 직접 목적어를 가질 수 없습니다.<br>
+                        <b>예시:</b> <code class="bg-gray-100 p-1 rounded">alzarsi</code> (일어나다), <code class="bg-gray-100 p-1 rounded">fermarsi</code> (멈추다), <code class="bg-gray-100 p-1 rounded">sedersi</code> (앉다)</p>
+                    </div>
+                    <div class="border-b pb-4">
+                        <h4 class="text-lg font-medium text-gray-600">형식적(외견상) 재귀동사 (36강)</h4>
+                        <p class="text-sm text-gray-700 mt-1"><b>정의:</b> 재귀 대명사가 간접 목적어('~에게') 역할을 하며, 문장 내에 별도의 직접 목적어를 가집니다.<br>
+                        <b>예시:</b> <code class="bg-gray-100 p-1 rounded">lavarsi</code> (씻다), <code class="bg-gray-100 p-1 rounded">mettersi</code> (입다), <code class="bg-gray-100 p-1 rounded">tagliarsi</code> (자르다)<br>
+                        <b>문장:</b> <code class="bg-gray-100 p-1 rounded"><b>Mi lavo le mani</b>.</code> (나는 손을 씻는다.) - <code class="bg-gray-100 p-1 rounded">Mi</code>: 간접 목적어 / <code class="bg-gray-100 p-1 rounded">le mani</code>: 직접 목적어</p>
+                    </div>
+                    <div class="border-b pb-4">
+                        <h4 class="text-lg font-medium text-gray-600">상호 재귀동사 (37강)</h4>
+                        <p class="text-sm text-gray-700 mt-1"><b>정의:</b> 복수 주어에게만 사용되며, 주어들이 <b>'서로'</b>에게 동일한 행위를 함을 의미.<br>
+                        <b>예시:</b> <code class="bg-gray-100 p-1 rounded">vedersi</code> (서로 보다), <code class="bg-gray-100 p-1 rounded">amarsi</code> (서로 사랑하다), <code class="bg-gray-100 p-1 rounded">incontrarsi</code> (서로 만나다)</p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-medium text-gray-600">대명사 동사 (38강)</h4>
+                        <p class="text-sm text-gray-700 mt-1"><b>정의:</b> 재귀 형태를 띠지만 재귀의 의미는 거의 없거나 없는, 관용적으로 굳어진 동사.<br>
+                        <b>예시:</b> <code class="bg-gray-100 p-1 rounded">vergognarsi di</code> (~을 부끄러워하다), <code class="bg-gray-100 p-1 rounded">arrabbiarsi con</code> (~에게 화내다), <code class="bg-gray-100 p-1 rounded">ricordarsi di</code> (~을 기억하다)</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="s39" class="mb-12 bg-white p-6 rounded-lg shadow">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-4 border-b pb-2">11. 제 39강 ~ 41강: 관계대명사 (Pronomi Relativi)</h2>
+                
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">11.1. 관계대명사란? - 문장을 잇는 다리</h3>
+                <p class="mb-4">두 개의 문장을 하나로 연결하여, 한 문장이 다른 문장의 명사(선행사)를 수식하는 역할을 합니다.</p>
+                
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">11.2. 관계대명사 che (39강)</h3>
+                <ul class="list-disc list-inside mb-4 ml-4 space-y-2">
+                    <li><b>특징:</b> 선행사는 사람, 사물 모두 가능. 오직 <b>주격</b> 또는 <b>직접 목적격</b>으로만 사용. 형태가 변하지 않음.</li>
+                    <li><b>주격:</b> <code class="bg-gray-100 p-1 rounded">Ho incontrato il ragazzo <b>che</b> studia con noi.</code> (우리와 함께 공부하는 그 소년)</li>
+                    <li><b>목적격:</b> <code class="bg-gray-100 p-1 rounded">Ho letto il libro <b>che</b> mi hai consigliato.</code> (네가 나에게 추천해 준 그 책)</li>
+                </ul>
+
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">11.3. 관계대명사 cui (40강)</h3>
+                <ul class="list-disc list-inside mb-4 ml-4 space-y-2">
+                    <li><b>특징:</b> 항상 <b>전치사와 함께 사용</b>됨. 간접 목적격, 소유격, 장소 등 다양한 기능 수행. 형태가 변하지 않음.</li>
+                    <li><b>a cui (간접 목적격):</b> <code class="bg-gray-100 p-1 rounded">L'amico <b>a cui</b> scrivo una lettera abita a Roma.</code> (내가 편지를 쓰는 그 친구)</li>
+                    <li><b>in cui (장소):</b> <code class="bg-gray-100 p-1 rounded">Questa è la città <b>in cui</b> vivo.</code> (이곳이 내가 사는 도시)</li>
+                    <li><b>소유격 용법 (il cui...):</b> <b>정관사</b>(<code class="bg-gray-100 p-1 rounded">il/la/i/le</code>) <b>+ cui + 명사</b> 구조. 정관사는 소유되는 명사에 일치.<br>
+                        <span class="text-sm text-gray-700 ml-4">예: <code class="bg-gray-100 p-1 rounded">Ho un amico <b>il cui padre</b> è un medico famoso.</code> (아버지가 유명한 의사인 친구)</span></li>
+                </ul>
+                
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">11.4. 관계대명사 quale (41강)</h3>
+                <ul class="list-disc list-inside mb-4 ml-4 space-y-2">
+                    <li><b>특징:</b> <code class="bg-gray-100 p-1 rounded">che</code>와 <code class="bg-gray-100 p-1 rounded">cui</code>를 모두 대체할 수 있는 격식적인 표현. <b>항상 정관사와 함께 사용</b>되며, 선행사의 성과 수에 따라 형태가 변함 (<code class="bg-gray-100 p-1 rounded">il quale</code>, <code class="bg-gray-100 p-1 rounded">la quale</code>, <code class="bg-gray-100 p-1 rounded">i quali</code>, <code class="bg-gray-100 p-1 rounded">le quali</code>).</li>
+                    <li><b>용법 예시:</b> <code class="bg-gray-100 p-1 rounded">il ragazzo <b>il quale</b> studia con noi</code></li>
+                </ul>
+            </section>
+            
+            <section id="s42" class="mb-12 bg-white p-6 rounded-lg shadow">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-4 border-b pb-2">12. 제 42강 ~ 45강: 비교급과 최상급 (Comparativi e Superlativi)</h2>
+                
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">12.1. 비교와 평가의 기술</h3>
+                <p class="mb-4">형용사를 사용하여 두 대상의 우열, 동등함을 비교하거나, 최고 수준임을 표현하는 방법입니다.</p>
+                
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">12.2. 비교급 (Grado Comparativo)</h3>
+                <div class="space-y-4">
+                    <div class="border-b pb-4">
+                        <h4 class="text-lg font-medium text-gray-600">A. 우등 비교 (<code class="bg-gray-100 p-1 rounded">più...</code>) (42강): ~보다 더 ~한</h4>
+                        <ul class="list-disc list-inside ml-4 mt-2 text-sm text-gray-700 space-y-1">
+                            <li><b>più ... di:</b> 두 개의 명사 또는 대명사를 비교.<br>
+                                <span class="ml-4">예: <code class="bg-gray-100 p-1 rounded">Marco è <b>più</b> alto <b>di</b> Luca.</code> (마르코는 루카보다 키가 더 크다.)</span></li>
+                            <li><b>più ... che:</b> 두 개의 형용사, 부사, 동사, 전치사구 등을 비교.<br>
+                                <span class="ml-4">예: <code class="bg-gray-100 p-1 rounded">Leggere è <b>più</b> facile <b>che</b> parlare.</code> (읽는 것은 말하는 것보다 더 쉽다.)</span></li>
+                        </ul>
+                    </div>
+                    <div class="border-b pb-4">
+                        <h4 class="text-lg font-medium text-gray-600">B. 열등 비교 (<code class="bg-gray-100 p-1 rounded">meno...</code>) (43강): ~보다 덜 ~한</h4>
+                        <p class="text-sm text-gray-700 mt-1 ml-4"><code class="bg-gray-100 p-1 rounded">più</code>를 <code class="bg-gray-100 p-1 rounded">meno</code>로 바꾸면 됨. <code class="bg-gray-100 p-1 rounded">di</code>와 <code class="bg-gray-100 p-1 rounded">che</code>의 사용 규칙은 우등 비교와 동일.<br>
+                        <span class="ml-4">예: <code class="bg-gray-100 p-1 rounded">Luca è <b>meno</b> alto <b>di</b> Marco.</code> (루카는 마르코보다 키가 덜 크다.)</span></p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-medium text-gray-600">C. 동등 비교 (<code class="bg-gray-100 p-1 rounded">(tanto)...quanto</code>, <code class="bg-gray-100 p-1 rounded">(così)...come</code>) (44강): ~만큼 ~한</h4>
+                        <p class="text-sm text-gray-700 mt-1 ml-4">두 대상이 동등한 수준임을 나타냄. 괄호 안의 <code class="bg-gray-100 p-1 rounded">tanto</code>와 <code class="bg-gray-100 p-1 rounded">così</code>는 생략 가능.<br>
+                        <span class="ml-4">예: <code class="bg-gray-100 p-1 rounded">Marco è <b>(tanto)</b> alto <b>quanto</b> Luca.</code> (마르코는 루카만큼 키가 크다.)</span></p>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-medium text-gray-700 mt-6 mb-3">12.3. 최상급 (Grado Superlativo) (45강)</h3>
+                <div class="space-y-4">
+                    <div class="border-b pb-4">
+                        <h4 class="text-lg font-medium text-gray-600">A. 상대 최상급: ~중에서 가장 ~한</h4>
+                        <p class="text-sm text-gray-700 mt-1 ml-4">특정 그룹 내에서 최고 또는 최저 수준을 나타냄.<br>
+                        <b>구조:</b> <b>정관사 + più/meno + 형용사 (+ di/tra + 비교 집단)</b><br>
+                        <span class="ml-4">예: <code class="bg-gray-100 p-1 rounded">Marco è lo studente <b>più</b> alto <b>della classe</b>.</code> (마르코는 반에서 가장 키가 큰 학생이다.)</span></p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-medium text-gray-600">B. 절대 최상급: 매우 ~한</h4>
+                        <p class="text-sm text-gray-700 mt-1 ml-4">비교 대상 없이 형용사의 의미를 매우 강하게 강조.</p>
+                        <ol class="list-decimal list-inside ml-8 mt-2 text-sm text-gray-700 space-y-1">
+                            <li><b>-issimo 접미사:</b> 형용사 어미에 <code class="bg-gray-100 p-1 rounded">-issimo/a/i/e</code>를 붙임.<br>
+                                <span class="ml-4">예: <code class="bg-gray-100 p-1 rounded">bello</code> → <b>bellissimo</b> (매우 아름다운)</span></li>
+                            <li><b>molto + 형용사:</b> <code class="bg-gray-100 p-1 rounded">molto</code>를 형용사 앞에 붙임.<br>
+                                <span class="ml-4">예: <b>molto</b> <code class="bg-gray-100 p-1 rounded">bello</code> (매우 아름다운)</span></li>
+                            <li><b>형용사 반복:</b> 구어체에서 형용사를 반복하여 강조.<br>
+                                <span class="ml-4">예: <b>bello bello</b> (정말 아름다운)</span></li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <section id="s_end" class="mb-12 bg-white p-6 rounded-lg shadow">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-4 border-b pb-2">🌟 결론</h2>
+                <p class="text-base leading-relaxed">
+                    근과거부터 비교급과 최상급에 이르기까지, 이탈리아어 문법의 핵심적인 기둥들을 살펴보았습니다. 이 요약본을 통해 배운 내용을 복습하고, 각 문법 요소가 문장에서 어떻게 유기적으로 작동하는지 이해하는 데 도움이 되었기를 바랍니다. 가장 중요한 것은 여기에 정리된 지식을 바탕으로 꾸준히 문장을 만들고, 읽고, 말하는 연습을 통해 문법을 '아는 것'에서 '자유자재로 사용하는 것'으로 전환하는 것입니다. 이 요약본이 여러분의 든든한 동반자가 되어, 유창한 이탈리아어로 가는 길을 밝혀주길 바랍니다.
+                </p>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('#sidebar a.nav-link');
+            const sections = document.querySelectorAll('main section');
+
+            function setActiveLink(targetId) {
+                navLinks.forEach(link => {
+                    if (link.getAttribute('data-target') === targetId) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('data-target');
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        setActiveLink(targetId);
+                    }
+                });
+            });
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '-80px 0px -40% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const targetId = entry.target.id;
+                        setActiveLink(targetId);
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            
+            if (window.location.hash) {
+                const targetId = window.location.hash.substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    setTimeout(() => {
+                         targetElement.scrollIntoView({ behavior: 'auto', block: 'start' });
+                         setActiveLink(targetId);
+                    }, 100);
+                }
+            } else {
+                setActiveLink('s0');
+            }
+        });
+    </script>
+
+</body>
+</html>
